@@ -1,0 +1,357 @@
+:root {
+  --bg: #f3f6f8;
+  --surface: #ffffff;
+  --brand: #0f3b57;
+  --accent: #f29f05;
+  --text: #10212b;
+  --muted: #5b6a74;
+  --line: #d7e0e6;
+  --shadow: 0 10px 30px rgba(16, 33, 43, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 10%, #d9e8f4 0%, #eef3f7 35%, var(--bg) 100%);
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, #0f3b57 0%, #1a5b80 55%, #2e7ca8 100%);
+  z-index: 999;
+  animation: pulseBg 3s infinite alternate;
+}
+
+.welcome-card {
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  max-width: 650px;
+  animation: riseUp 1s ease;
+}
+
+.welcome-tag {
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffcf70;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.welcome-card h1 {
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  margin: 0;
+}
+
+.welcome-sub {
+  color: #e8f4ff;
+}
+
+.loader {
+  width: 62px;
+  height: 62px;
+  border: 6px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  margin: 1.2rem auto;
+  animation: spin 1s linear infinite;
+}
+
+.welcome-timer {
+  color: #daecf9;
+  font-size: 0.95rem;
+}
+
+.hero {
+  position: relative;
+  min-height: 420px;
+  padding-bottom: 2rem;
+  background: linear-gradient(120deg, rgba(15, 59, 87, 0.8), rgba(0, 0, 0, 0.45)),
+    url("./images/toyota-prius-2021-1.jpg") center/cover;
+  color: #fff;
+}
+
+.top-nav {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #eaf5ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: #ffcf70;
+}
+
+.hero-content {
+  width: min(1100px, 92%);
+  margin: 4rem auto 0;
+  text-align: left;
+  animation: fadeInDown 1s ease;
+}
+
+.hero-content h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+}
+
+.hero-content p {
+  margin-top: 0.7rem;
+  font-size: 1.05rem;
+  max-width: 640px;
+}
+
+.hero-buttons,
+.about-buttons,
+.support-buttons {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.62rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #1d1d1d;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--brand);
+}
+
+.cars-section,
+.about-section,
+.reviews-section,
+.support-section {
+  width: min(1100px, 92%);
+  margin: 2rem auto;
+}
+
+.cars-section h3,
+.about-section h3,
+.reviews-section h3,
+.support-section h3 {
+  font-size: 1.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-sub {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.car-card,
+.review-card {
+  background: var(--surface);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.car-card {
+  transform: translateY(14px);
+  opacity: 0;
+  animation: cardIn 0.65s ease forwards;
+}
+
+.car-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  padding: 0.4rem;
+}
+
+.car-gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.car-info {
+  padding: 1rem;
+}
+
+.car-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.car-price {
+  color: #cb4f00;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.car-desc {
+  color: var(--muted);
+  margin: 0 0 0.8rem;
+  font-size: 0.92rem;
+  min-height: 40px;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #25d366;
+  color: #fff;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.25s, filter 0.25s;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.95);
+}
+
+.about-section,
+.support-section {
+  background: #ffffffbf;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.2rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.review-card {
+  padding: 1rem;
+}
+
+.review-card p {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.review-card h4 {
+  margin-bottom: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  margin-top: 1.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes riseUp {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseBg {
+  from {
+    filter: saturate(100%);
+  }
+  to {
+    filter: saturate(120%);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cardIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    margin-top: 2rem;
+  }
+}
+
+
