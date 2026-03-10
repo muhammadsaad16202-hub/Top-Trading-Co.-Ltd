@@ -272,6 +272,74 @@ body {
   padding: 1.2rem;
 }
 
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.ceo-card {
+  background: linear-gradient(180deg, #f9fbfd 0%, #eef4f8 100%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.ceo-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #dce6ed;
+}
+
+.ceo-copy {
+  padding: 1rem;
+}
+
+.ceo-tag {
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.ceo-copy h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.ceo-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.about-copy > p:first-child {
+  margin-top: 0;
+}
+
+.contact-details {
+  margin-top: 1rem;
+}
+
+.contact-details p {
+  margin: 0.45rem 0;
+  color: var(--text);
+}
+
+.contact-details a {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -351,6 +419,10 @@ footer {
 
   .hero-content {
     margin-top: 2rem;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
   }
 }
 
